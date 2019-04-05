@@ -7,7 +7,17 @@ function getMean(array) {
 }
 
 function getMedian(array) {
-    return array[parseInt(array.length/2)]
+    array.sort(function(a,b){ return a -b })
+    let median
+
+    if (array.length % 2 !== 0) {
+        median = array[Math.floor(array.length / 2)]
+    } else {
+        let midOne = array[Math.floor(array.length/2) - 1]
+        let midTwo = array[Math.floor(array.length / 2)]
+        median = (midOne + midTwo) / 2 
+    }
+    return median
 }
 
 function getMode(array) {
@@ -25,4 +35,4 @@ function meanMedianMode(array){
 
 let x = [1,2,3,4,6,79,03,12]
 
-console.log(getMedian(x))
+console.log(meanMedianMode(x))
