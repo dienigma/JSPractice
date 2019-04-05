@@ -15,7 +15,12 @@ function getMode(array) {
 }
 
 function meanMedianMode(array){
+    return {
+        mean: getMean(array),
+        median: getMedian(array),
+        mode: getMode(array),
 
+    }
 }
 
 let x = [1,2,3,4,6,79,03,12]
