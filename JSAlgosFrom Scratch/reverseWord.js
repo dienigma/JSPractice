@@ -11,4 +11,4 @@ function reverseWord(string) {
     return reverseArr.join(' ')
 }
 
-console.log(reverseWord("codiing JavaScript"))
+console.log(reverseWord("coding JavaScript"))
