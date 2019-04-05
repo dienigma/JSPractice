@@ -21,7 +21,29 @@ function getMedian(array) {
 }
 
 function getMode(array) {
-    
+    // Using Hashtables
+    let modeObject = {}
+    array.forEach(num => {
+        if(!modeObject[num]) modeObject[num] = 0
+        modeObject[num]++
+    });
+
+    let maxFrequency = 0;
+    let modes = []
+    for ( let num in modeObject){
+        if(modeObject[num] > maxFrequency){
+            modes = [num]
+            maxFrequency = modeObject[num]
+        }
+        else if (modeObject[num] === maxFrequency){
+            modes.push(num)
+        }
+
+    }
+
+    if (modes.length = Object.keys(modeObject).length) modes = []
+
+    return modes
 }
 
 function meanMedianMode(array){
