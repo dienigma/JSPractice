@@ -1,0 +1,15 @@
+{
+  "name": "bs4starter",
+  "version": "1.0.0",
+  "description": "Learning Bootstrap 4 workflow",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "chinmayjoshi"
+  },
+  "author": "",
+  "license": "ISC"
+}
