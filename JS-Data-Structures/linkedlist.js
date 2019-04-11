@@ -50,6 +50,7 @@ LinkedList.prototype.removeFromTail = function () {
     this.tail = this.tail.previous
     if(this.tail) this.tail.next = null
     else this.head = null 
+    return val
 }
 
 
