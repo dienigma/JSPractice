@@ -14,6 +14,20 @@ BST.prototype.insert = function (value){
     }
 } 
 
+// Contains method
+
+BST.prototype.contains = function (value){
+    if (value === this.value) return true
+    else if (value < this.value) {
+        // Do something
+        if(!this.leftChild) return false
+        else return this.leftChild.contains(value)
+    } else if (value > this.value) {
+        if(!this.rightChild) return false
+        else return this.rightChild.contains(value)
+    }
+}
+
 var bst = new BST(50)
 bst.insert(21)
 bst.insert(12)
@@ -21,5 +35,9 @@ bst.insert(22)
 bst.insert(55)
 bst.insert(34)
 
+console.log(bst.contains(100))
 
-console.log(bst)
+console.log(bst.contains(12))
+
+
+// console.log(bst)
