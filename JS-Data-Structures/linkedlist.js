@@ -53,12 +53,16 @@ LinkedList.prototype.removeFromTail = function () {
     return val
 }
 
+LinkedList.prototype.search = function (searchValue){
+    var currentNode = this.head
+    while(currentNode){
+        
+        currentNode = currentNode.next
+    }
+
+    
+}
+
 
 var ll = new LinkedList()
-ll.addToHead(2)
-ll.addToHead(34)
-ll.addToHead(2000)
-ll.addToTail(3000)
-
-ll.removeFromHead()
-console.log(ll.removeFromHead())
+ll.search()
