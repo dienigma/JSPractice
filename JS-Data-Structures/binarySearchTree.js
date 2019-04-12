@@ -31,7 +31,7 @@ BST.prototype.contains = function (value){
 // Depth first traversal
 
 BST.prototype.depthFirstTraversal = function (iteratorFunc,order){
-
+    if(order === 'pre-order') iteratorFunc(this.value)
     if(this.leftChild) this.leftChild.depthFirstTraversal(iteratorFunc,order)
     if(order === 'in-order') iteratorFunc(this.value)
     if (this.rightChild) this.rightChild.depthFirstTraversal(iteratorFunc,order)
