@@ -65,14 +65,18 @@ LinkedList.prototype.search = function (searchValue){
 
 
 LinkedList.prototype.indexOf = function (value) {
+    var indexes = []
     var currentNode = this.head
-    var index = 0
+    var currentIndex = 0
     while(currentNode){
-        if(currentNode.value === value) return index
+        if(currentNode.value === value) {
+            indexes.push(currentIndex)
+        }
+        
         currentNode = currentNode.next
-        index++
+        currentIndex++
     }
-    return null
+    return indexes
 }
 
 var ll = new LinkedList()
@@ -84,5 +88,7 @@ ll.addToTail(243)
 ll.addToHead(12)
 ll.addToHead(15)
 ll.addToHead(25)
+ll.addToHead(243)
+ll.addToTail(243)
 
 console.log(ll.indexOf(243))
