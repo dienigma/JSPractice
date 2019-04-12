@@ -53,7 +53,7 @@ bst.insert(105)
 bst.insert(10)
 
 
-bst.depthFirstTraversal(log,'in-order')
+bst.depthFirstTraversal(log,'pre-order')
 
 function log(value){
     console.log(value)
