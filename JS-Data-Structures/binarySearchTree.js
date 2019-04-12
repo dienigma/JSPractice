@@ -28,6 +28,15 @@ BST.prototype.contains = function (value){
     }
 }
 
+// Depth first traversal
+
+BST.prototype.depthFirstTraversal = function (iteratorFunc){
+    if(this.leftChild) this.leftChild.depthFirstTraversal(iteratorFunc)
+    iteratorFunc(this.value)
+    if (this.rightChild) this.rightChild.depthFirstTraversal(iteratorFunc)
+    
+}
+
 var bst = new BST(50)
 bst.insert(21)
 bst.insert(12)
