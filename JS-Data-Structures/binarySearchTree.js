@@ -15,5 +15,11 @@ BST.prototype.insert = function (value){
 } 
 
 var bst = new BST(50)
+bst.insert(21)
+bst.insert(12)
+bst.insert(22)
+bst.insert(55)
+bst.insert(34)
+
 
 console.log(bst)
