@@ -34,19 +34,27 @@ BST.prototype.depthFirstTraversal = function (iteratorFunc){
     if(this.leftChild) this.leftChild.depthFirstTraversal(iteratorFunc)
     iteratorFunc(this.value)
     if (this.rightChild) this.rightChild.depthFirstTraversal(iteratorFunc)
-    
+
 }
 
 var bst = new BST(50)
-bst.insert(21)
-bst.insert(12)
-bst.insert(22)
-bst.insert(55)
-bst.insert(34)
 
-console.log(bst.contains(100))
+bst.insert(30)
+bst.insert(70)
+bst.insert(100)
+bst.insert(60)
+bst.insert(59)
+bst.insert(20)
+bst.insert(45)
+bst.insert(35)
+bst.insert(85)
+bst.insert(105)
+bst.insert(10)
 
-console.log(bst.contains(12))
 
+bst.depthFirstTraversal(log)
 
+function log(value){
+    console.log(value)
+}
 // console.log(bst)
