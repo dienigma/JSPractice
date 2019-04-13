@@ -49,6 +49,17 @@ BST.prototype.breadthFirstTraversal = function (iteratorFunc){
     }
 }
 
+BST.prototype.getMinVal = function (){
+    if(this.leftChild) return this.leftChild.getMinVal()
+    else return this.value
+}
+
+BST.prototype.getMaxVal = function (){
+    if(this.rightChild) return this.rightChild.getMaxVal()
+    else return this.value
+}
+
+
 var bst = new BST(50)
 
 bst.insert(30)
@@ -64,9 +75,16 @@ bst.insert(105)
 bst.insert(10)
 
 
-bst.breadthFirstTraversal(log)
+console.log(bst.getMinVal())
+console.log(bst.getMaxVal())
 
 function log(node){
     console.log(node.value)
+}
+
+function store(value){
+    var storeArr = []
+    storeArr.push(value)
+    return storeArr
 }
 // console.log(bst)
