@@ -50,10 +50,30 @@ HashTable.prototype.insert = function (key,value){
     }
 }
 
+HashTable.prototype.get = function (key){
+    var index = this.hash(key)
+    if(!this.buckets[index]) return null
+    else {
+        var currentNode = this.buckets[index]
+        while(currentNode){
+            if(currentNode.key=== key) return currentNode.value
+            currentNode = currentNode.next 
+        }
+        return null
+    }
+}
+
 var myHt = new HashTable(30)
 myHt.insert("Chinmay","joshichinmay09@gmail.com")
 myHt.insert("John","johndoe09@email.com")
 myHt.insert("Dean","Dean@email.com")
 myHt.insert("Dane","Dane@yahoo.com")
 myHt.insert("John","JohnDoe@gmail.com")
-console.log(myHt.buckets)
+
+HashTable.prototype.retrieveAll = function (){
+    for (let i = 0; i < this.buckets.length; i++){
+        if(this.buckets[i]) console.log(this.buckets[i])
+    }
+}
+console.log(myHt.get("Dean"))
+myHt.retrieveAll()
