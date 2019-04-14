@@ -71,9 +71,15 @@ myHt.insert("Dane","Dane@yahoo.com")
 myHt.insert("John","JohnDoe@gmail.com")
 
 HashTable.prototype.retrieveAll = function (){
-    for (let i = 0; i < this.buckets.length; i++){
-        if(this.buckets[i]) console.log(this.buckets[i])
-    }
+   var allNodes = []
+   for (var i = 0; i < this.numBuckets; i++){
+        var currentNode = this.buckets[i]       
+        while(currentNode){
+            allNodes.push(currentNode)
+            currentNode = currentNode.next
+        }
+   }
+   return allNodes
 }
 console.log(myHt.get("Dean"))
-myHt.retrieveAll()
+console.log(myHt.retrieveAll())
